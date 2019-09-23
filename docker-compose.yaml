@@ -1,0 +1,13 @@
+version: '3'
+services:
+  web:
+    image: lavalinkfinder
+    build: lavalinkfinder
+    ports:
+    - "5000:8080"
+    links:
+    - lavalink
+  lavalink:
+    image: fredboat/lavalink:master
+    deploy:
+      replicas: 2
